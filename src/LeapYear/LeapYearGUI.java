@@ -28,13 +28,22 @@ public class LeapYearGUI extends JFrame{
     }
 
     public boolean determineLeapYear(){
-        int year = Integer.parseInt(tfYear.getText());
-        if(year%4==0){
-            if(year%100==0){
-                if(year%400==0){
+        try {
+            int year = Integer.parseInt(tfYear.getText());
+            if(year>=1582){
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                            return true;
+                        }
+                        return false;
+                    }
                     return true;
-                } return false;
-            } return true;
+                }
+            } throw (new Exception());
+        } catch(Exception e){
+            System.err.println("Input was not a valid year");
+            System.exit(0);
         } return false;
     }
 
