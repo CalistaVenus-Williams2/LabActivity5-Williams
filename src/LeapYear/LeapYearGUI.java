@@ -34,13 +34,13 @@ public class LeapYearGUI extends JFrame{
             boolean leap=false;
             if(year>=1582){
                 if (year % 4 == 0) {
+                    leap =true;
                     if (year % 100 == 0) {
+                        leap = false;
                         if (year % 400 == 0) {
                             leap= true;
                         }
-                        leap = false;
                     }
-                    leap = true;
                 } display(leap);
             } else {
                 throw (new Exception());
