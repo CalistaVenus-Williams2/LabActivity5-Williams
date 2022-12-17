@@ -44,7 +44,7 @@ public class SimpleCalcGUI extends JFrame {
             int y = Integer.parseInt(tfNumber2.getText());
             calc(x, y);
         } catch (NumberFormatException e){
-            System.err.println("Input is not a number.");
+            JOptionPane.showMessageDialog(panel1,"Input is not a number.");
         }
     }
     public void calc(int a, int b){
@@ -60,7 +60,7 @@ public class SimpleCalcGUI extends JFrame {
                 z = a/b;
             } display(z);
         } catch (Exception e){
-            System.err.println("Cannot divide by zero.");
+            JOptionPane.showMessageDialog(panel1,"Cannot divide by zero.");
         }
     }
 
