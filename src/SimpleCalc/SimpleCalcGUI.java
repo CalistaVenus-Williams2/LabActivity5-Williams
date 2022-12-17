@@ -39,17 +39,17 @@ public class SimpleCalcGUI extends JFrame {
     }
 
     public void input(){
-//        try{
+        try{
             int x = Integer.parseInt(tfNumber1.getText());
             int y = Integer.parseInt(tfNumber2.getText());
             calc(x, y);
-//        } catch (NumberFormatException e){
-//            System.err.println("Input is not a number.");
-//        }
+        } catch (NumberFormatException e){
+            System.err.println("Input is not a number.");
+        }
     }
     public void calc(int a, int b){
         int z;
-        //try {
+        try {
             if(cbOperations.getSelectedItem()=="+"){
                 z = a+b;
             } else if (cbOperations.getSelectedItem()=="-"){
@@ -59,9 +59,9 @@ public class SimpleCalcGUI extends JFrame {
             } else {
                 z = a/b;
             } display(z);
-//        } catch (Exception e){
-//            System.err.println("Cannot divide by zero.");
-//        }
+        } catch (Exception e){
+            System.err.println("Cannot divide by zero.");
+        }
     }
 
     public void display(int z){
