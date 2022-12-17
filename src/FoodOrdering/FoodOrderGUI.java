@@ -21,16 +21,9 @@ public class FoodOrderGUI extends JFrame{
     private JRadioButton rb10;
     private JRadioButton rb15;
     private JButton btnOrder;
-    private List<JRadioButton> dis;
-    private List<JCheckBox> food;
 
     public FoodOrderGUI(){
         setTitle("Food Ordering System");
-        dis = new ArrayList();
-        dis.add(rbNone);
-        dis.add(rb5);
-        dis.add(rb10);
-        dis.add(rb15);
 
         btnOrder.addActionListener(new ActionListener() {
             @Override
