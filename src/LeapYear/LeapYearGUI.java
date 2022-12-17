@@ -45,19 +45,18 @@ public class LeapYearGUI extends JFrame{
             } else {
                 throw (new Exception());
             }
-        }catch (NumberFormatException e){
-            System.err.println("Input is not a number");
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(panel1,"Input is not a number");
         } catch(Exception e){
-            System.err.println("Input is not a valid year");
+            JOptionPane.showMessageDialog(panel1,"Input is not a valid year (1582 onwards)");
         }
     }
 
     public void display(boolean leap){
-        JFrame huh = new JFrame();
         if(leap){
-            JOptionPane.showMessageDialog(huh,"Leap Year");
+            JOptionPane.showMessageDialog(panel1,"Leap Year");
         } else {
-            JOptionPane.showMessageDialog(huh,"Not a leap year");
+            JOptionPane.showMessageDialog(panel1,"Not a leap year");
         }
     }
 }
