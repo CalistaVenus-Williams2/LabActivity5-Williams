@@ -43,37 +43,61 @@ public class FoodOrderGUI extends JFrame{
 
     public void input(){
         int sum =0;
-        //insert exception when no items selected
-        if(cPizza.isSelected()){
-            sum = sum+100;
-        } if(cBurger.isSelected()){
-            sum = sum+80;
-        } if(cFries.isSelected()){
-            sum = sum+65;
-        } if(cSoftDrinks.isSelected()){
-            sum = sum+55;
-        } if(cTea.isSelected()){
-            sum = sum+50;
-        } if(cSundae.isSelected()){
-            sum = sum+40;
+        int count = 0;
+        try{
+            if(cPizza.isSelected()){
+                sum = sum+100;
+                count++;
+            } if(cBurger.isSelected()){
+                sum = sum+80;
+                count++;
+            } if(cFries.isSelected()){
+                sum = sum+65;
+                count++;
+            } if(cSoftDrinks.isSelected()){
+                sum = sum+55;
+                count++;
+            } if(cTea.isSelected()){
+                sum = sum+50;
+                count++;
+            } if(cSundae.isSelected()){
+                sum = sum+40;
+                count++;
+            } if(count==0){
+                throw (new Exception());
+            } else {
+                discount(sum);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(panel1,"No items selected.");
         }
-        discount(sum);
     }
 
     public void discount(int sum) {
         double b4 = sum;
         double fin = sum;
-        //add exception for no discount selected
-        if(rbNone.isSelected()){
-            //do nothing
-        } else if(rb5.isSelected()){
-            fin = b4-(b4*.05);
-        } else if(rb10.isSelected()){
-            fin = b4-(b4*.10);
-        } else if(rb15.isSelected()){
-            fin = b4-(b4*.15);
+        int count = 0;
+        try{
+            if(rbNone.isSelected()){
+                //do nothing
+                count++;
+            } else if(rb5.isSelected()){
+                fin = b4-(b4*.05);
+                count++;
+            } else if(rb10.isSelected()){
+                fin = b4-(b4*.10);
+                count++;
+            } else if(rb15.isSelected()){
+                fin = b4-(b4*.15);
+                count++;
+            } if (count==0){
+                throw (new Exception());
+            } else {
+                display(fin);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(panel1,"No discount selected.");
         }
-        display(fin);
     }
 
     public void display(double fin){
